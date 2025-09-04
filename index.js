@@ -11,18 +11,17 @@ function mostrarNumero (numero){
 }
 
 
-function option(modo) {
+function option(modo){
+
+    if (opCode==""){
 
     primerNumero=variable;
     variable="";
+    }
     opCode=modo;
 
-    document.getElementById("texto2").textContent=primerNumero + modo;
+document.getElementById("texto2").textContent=primerNumero + modo;
 
-
-
-
-    
 }
 
 function raiz(){
@@ -114,15 +113,14 @@ function invertir(){
 
 if(variable>0){
 
-variable="-"+variable;
-document.getElementById("texto").textContent=variable;
+    variable="-"+variable;
+    document.getElementById("texto").textContent=variable;
 }
-
 else{
 
-        variable=variable.slice(1);
+    variable=variable.toString().slice(1);
 
-document.getElementById("texto").textContent=variable;
+     document.getElementById("texto").textContent=variable;
 
 }
 }
