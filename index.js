@@ -1,22 +1,29 @@
 let variable= "";
 let primerNumero= "";
 let opCode= "";
+let resultado=false;
 
 
 function mostrarNumero (numero){
+if (resultado){
+borrarTodo()
+resultado=false
 
+}
         variable+=numero;
-        document.getElementById ("texto").textContent=variable
+        document.getElementById("texto").textContent=variable
 
 }
 
 
-function option(modo){
+
+function option(modo) {
 
     if (opCode==""){
-
-    primerNumero=variable;
-    variable="";
+        guardarNumero()
+    } else if (variable!=""){
+        calculos()
+        guardarNumero()
     }
     opCode=modo;
 
@@ -24,20 +31,37 @@ document.getElementById("texto2").textContent=primerNumero + modo;
 
 }
 
+function guardarNumero(){
+
+primerNumero = variable
+variable=""
+
+}
+
+
+function igual (){
+
+    document.getElementById("texto2").textContent= primerNumero + opCode + variable+"=";
+    calculos()
+    document.getElementById("texto").textContent=variable;
+    guardarNumero()
+
+}
+
+
 function raiz(){
 
 
     document.getElementById ("texto").textContent = Math.sqrt (variable)
 }
 
-function igual(){
 
-         document.getElementById("texto2").textContent= primerNumero+ opCode+ variable+"="
+function calculos (){
 
     switch (opCode) {
 
         case "+":
-             variable = Number(primerNumero) + Number(variable);
+            variable = Number(primerNumero) + Number(variable);
     
         break;
     
