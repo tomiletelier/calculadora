@@ -1,11 +1,12 @@
 .parent {
-    width: max-content;
     height: 50px;
     width: max-content;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(7, 1fr);
     gap: 1px;
+    justify-content: center;
+    text-align: center;
     
     
 }
@@ -14,24 +15,75 @@
 
 button {
 
-height: 50px;
-width: 80px;
-background-color: rgb(251, 250, 203);
-gap: 7px;
-font-size: large;
-justify-content: center;
+ display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  cursor: pointer;
+  width: 60px;
+  height: 50px;
+  background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+  border-radius: 30px;
+  border: 1px solid #8F9092;
+  transition: all 0.2s ease;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0c0202;
+  text-shadow: 0 1px #fff;
+}
+
+button:hover {
+  box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+}
+
+button:active {
+  box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+
+button:focus {
+  box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+
 
 }
 
 
 body
-
 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: right;
 
-height: 60px;
-justify-content: center;
-display: flex;
-color: rgb(0, 0, 0);
+  /* Dark mode colors and gradient */
+  background: #121212; /* Fallback for browsers that don't support gradients */
+  background: linear-gradient(
+    135deg,
+    #121212 25%,
+    #1a1a1a 25%,
+    #1a1a1a 50%,
+    #121212 50%,
+    #121212 75%,
+    #1a1a1a 75%,
+    #1a1a1a
+  );
+  background-size: 40px 40px;
+
+  /* Animation */
+  animation: move 4s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
 
 }
 
@@ -48,7 +100,11 @@ text-align: right;
     padding: 5px;
     margin: 5px;
     border: solid;
+    background-color: rgb(251, 250, 203);
+    text-align: right;
+
 }
+
 
 .div2 {
     grid-row-start: 2;
@@ -287,7 +343,7 @@ background-color: rgb(215, 214, 155);
 .div22 {
 
     background-color: rgb(9, 71, 178);
-    color: bisque; 
+    color:  #0c0202;ggit 
 }
 
 .div22:hover{
@@ -328,3 +384,9 @@ background-color: rgb(215, 214, 155);
 background-color: rgb(215, 214, 155);
 
 }
+
+
+
+
+
+
